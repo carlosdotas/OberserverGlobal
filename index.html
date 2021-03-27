@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>	
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="funcoes.js"></script>
+	<style type="text/css">
+		.square{
+			width: 50px;
+			height: 50px;
+			background-color: black;
+			color: white;
+			font-family: 25px;
+			padding: 20px;			
+		}
+		
+	</style>
+</head>
+<body>
+<div class="square" id="elementObserver1" ></div>
+<hr>
+<button onclick="model.increment()">Increment</button>
+<script type="text/javascript" src="js/Observer.js"></script>
+<script type="text/javascript" src="js/NumberModel.js"></script>
+<script type="text/javascript" src="js/ElementObserver.js"></script>
+<script type="text/javascript">
+	const model = new NumberModel();	
+	const eObs1 = new ElementObserver('elementObserver1');
+	const Conso = new ConsoleLog();
+
+	model.addObserver(eObs1);
+	model.addObserver(Conso);
+
+	console.log(model);
+</script>
+</body>
+</html>
